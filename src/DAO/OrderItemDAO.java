@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface OrderItemDAO {
     void addOrderItem(OrderItem orderItem);
-    List<OrderItem> findAll();
+    List<OrderItem> findAll(Integer id);
 
 
 
