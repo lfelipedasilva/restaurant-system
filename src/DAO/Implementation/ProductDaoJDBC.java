@@ -59,8 +59,8 @@ public class ProductDaoJDBC implements ProductDAO {
 
         try {
             st = conn.prepareStatement("UPDATE products SET price = ? WHERE id = ?");
-            st.setInt(1, id);
-            st.setDouble(2, price);
+            st.setDouble(1, price);
+            st.setInt(2, id);
             st.executeUpdate();
 
         } catch (SQLException e) {

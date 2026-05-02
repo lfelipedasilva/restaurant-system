@@ -8,17 +8,19 @@ import DAO.OrderItemDAO;
 import DAO.ProductDAO;
 import db.DB;
 
+import java.sql.Connection;
+
 public class DaoFactory {
-    public static void createProductDao() {
-        ProductDAO productDAO = new ProductDaoJDBC(DB.getConnection());
+    public static ProductDAO createProductDao(Connection conn) {
+        return new ProductDaoJDBC(conn);
     }
 
-    public static void createOrderDao() {
-        OrderDAO orderDAO = new OrderDaoJDBC(DB.getConnection());
+    public static OrderDAO createOrderDao(Connection conn) {
+        return new OrderDaoJDBC(conn);
     }
 
-    public static void createOrderItemDao() {
-        OrderItemDAO orderItemDAO = new OrderItemDaoJDBC(DB.getConnection());
+    public static OrderItemDAO createOrderItemDao(Connection conn) {
+        return new OrderItemDaoJDBC(conn);
     }
 
 }
